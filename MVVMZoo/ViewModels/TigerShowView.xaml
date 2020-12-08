@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="MVVMZoo.ShowViews.Animal.TigerShowView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MVVMZoo.ShowViews.Animal"
+             xmlns:viewModels="clr-namespace:MVVMZoo.ViewModels"
+             xmlns:showViews="clr-namespace:MVVMZoo.ShowViews"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+   <UserControl.Background>
+       <ImageBrush ImageSource="../Image/tiger1.jpg"/>
+   </UserControl.Background>
+
+    <Grid>
+        <Button Height="40" Width="225" FontSize="15" FontStyle="Italic" HorizontalAlignment="Center" Margin="0,350,00,0" Click="buttonTiger_Click" Background="#AAAAAAAA">
+            <StackPanel Orientation="Horizontal" >
+                <Image Source="../Image/i.gif"  Margin="0,0,5,0" Height="30"/>
+                <TextBlock Text="Информация о животном" Margin="0,5,5,0"/>
+            </StackPanel>
+        </Button>
+        <Button Height="40" Width="135" FontSize="15" FontStyle="Italic" HorizontalAlignment="Center" Margin="380,350,0,0" Click="buttonTigerSound_Click" Background="#AAAAAAAA">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="../Image/Play.png" Margin="0,0,5,0" Height="30"/>
+                <TextBlock Text="Издать звук" Margin="0,5,5,0"/>
+            </StackPanel>
+        </Button>
+        <TextBlock Height="300" Width="400" FontSize="16" FontStyle="Italic" FontWeight="Bold"  HorizontalAlignment="Left" Margin="10,10,0,200" Name="TextBlockTiger"/>
+    </Grid>
+
+
+</UserControl>

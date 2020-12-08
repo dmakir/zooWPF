@@ -1,0 +1,71 @@
+﻿<UserControl x:Class="MVVMZoo.ShowViews.ShowView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:viewmodels="clr-namespace:MVVMZoo.ViewModels"
+             xmlns:animal="clr-namespace:MVVMZoo.ShowViews.Animal"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="1000">
+
+    <UserControl.Resources>
+            <DataTemplate x:Name="showViewTemplate" DataType="{x:Type viewmodels:ShowViewModel}">
+                <viewmodels:ShowViews DataContext="{Binding}"/>
+            </DataTemplate>
+
+            <DataTemplate x:Name="catViewTemplate" DataType="{x:Type viewmodels:CatViewModel}">
+                <viewmodels:CatView DataContext="{Binding}"/>
+            </DataTemplate>
+            
+            <DataTemplate x:Name="dogViewTemplate" DataType="{x:Type viewmodels:DogViewModel}">
+            <viewmodels:DogView DataContext="{Binding}"/>
+            </DataTemplate>
+
+            <DataTemplate x:Name="tigerViewTemplate" DataType="{x:Type viewmodels:TigerViewModelShow}">
+                <animal:TigerShowView DataContext="{Binding}"/>
+            </DataTemplate>
+
+            <DataTemplate x:Name="wolfViewTemplate" DataType="{x:Type viewmodels:WolfViewModel}">
+                <viewmodels:WolfView DataContext="{Binding}"/>
+            </DataTemplate>
+
+        <DataTemplate x:Name="chickenViewTemplate" DataType="{x:Type viewmodels:ChickenViewModel}">
+                <viewmodels:ChickenView DataContext="{Binding}"/>
+            </DataTemplate>
+
+            <DataTemplate x:Name="storkViewTemplate" DataType="{x:Type viewmodels:StorkViewModel}">
+                <viewmodels:StorkView DataContext="{Binding}"/>
+            </DataTemplate>
+    </UserControl.Resources>
+
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <DockPanel Background="AntiqueWhite" Grid.Row="0" Grid.Column="0" Grid.RowSpan="5">
+            <StackPanel>
+                <Button Content="Кот 'Ашера'" Click="CatView_Click" />
+                <Button Content="Собака 'Лабрадор'" Click="DogView_Click"/>
+                <Button Content="Золотистый тигр" Click="TigerView_click"/>
+                <Button Content="Серый Волк" Click="WolfView_click"/>
+                <Button Content="Курица Домашняя" Click="ChickenView_click"/>
+                <Button Content="Белый Аист" Click="StorkView_click"/>
+            </StackPanel>
+        </DockPanel>
+
+        <ContentControl Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="4" Grid.RowSpan="5" Content="{Binding}"/>
+
+    </Grid>
+</UserControl>

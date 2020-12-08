@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8274CE48-82CE-4168-BA9F-C39D2A7196AE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MVVMZoo</RootNamespace>
+    <AssemblyName>MVVMZoo</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="ADD\FileServise\FileServise.cs" />
+    <Compile Include="ADD\Model\TodoModel.cs" />
+    <Compile Include="Animal\Bird\Bird.cs" />
+    <Compile Include="Animal\Bird\ChickenModel.cs" />
+    <Compile Include="Animal\Bird\StorkModel.cs" />
+    <Compile Include="Animal\DogModel.cs" />
+    <Compile Include="Animal\TigerModel.cs" />
+    <Compile Include="Animal\WolfModel.cs" />
+    <Compile Include="Interface\IAnimal.cs" />
+    <Compile Include="Interface\IPetAnimal.cs" />
+    <Compile Include="Interface\IWildAnimal.cs" />
+    <Compile Include="ViewModels\AddViewModel.xaml.cs">
+      <DependentUpon>AddViewModel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\CatView.xaml.cs">
+      <DependentUpon>CatView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\ChickenView.xaml.cs">
+      <DependentUpon>ChickenView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\DogView.xaml.cs">
+      <DependentUpon>DogView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\ShowViews.xaml.cs">
+      <DependentUpon>ShowViews.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\StorkView.xaml.cs">
+      <DependentUpon>StorkView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\TigerShowView.xaml.cs">
+      <DependentUpon>TigerShowView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\ShowView.xaml.cs">
+      <DependentUpon>ShowView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Animal\CatModel.cs" />
+    <Compile Include="ViewModels\WolfView.xaml.cs">
+      <DependentUpon>WolfView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CatViewModel.cs" />
+    <Compile Include="View\ChickenViewModel.cs" />
+    <Compile Include="View\DogViewModel.cs" />
+    <Compile Include="View\ShowViewModel.cs" />
+    <Compile Include="View\StorkViewModel.cs" />
+    <Compile Include="View\TigerViewModelShow.cs" />
+    <Compile Include="View\WolfViewModel.cs" />
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="ViewModels\AddViewModel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewModels\CatView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewModels\ChickenView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewModels\DogView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewModels\ShowViews.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewModels\StorkView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewModels\TigerShowView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewModels\ShowView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewModels\WolfView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\tiger.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Zoo1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\an.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Cat.jpg" />
+    <Resource Include="Image\Wolf.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Chiken.jpg" />
+    <Resource Include="Image\Stik.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\dog.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\tiger1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Play.png" />
+    <Resource Include="Image\i.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\pause.png" />
+    <Resource Include="Image\пауза 1.png" />
+    <Content Include="SoundAnimal\cat.wav" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
